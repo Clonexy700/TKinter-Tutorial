@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 и CSS3 сайт</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -21,13 +21,25 @@
       </div>
   </header>
 
+  <div id="top"><
+      <h1>Программирование</h1>
+      <h3>Как способ жизни!</h3>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-function slowScroll(id) {
-    $('body').animate({
-        scrollTop: $(id).offset().top
-    }, 500);
-}
-</script>
+  <script>
+      function slowScroll(id) {
+          $('html, body').animate({
+              scrollTop: $(id).offset().top
+          }, 500);
+      }
+
+      $(document).on("scroll", function () {
+          if($(window).scrollTop() === 0)
+              $("header").removeClass("fixed");
+          else
+              $("header").attr("class", "fixed")
+      });
+  </script>
 </body>
 </html>
