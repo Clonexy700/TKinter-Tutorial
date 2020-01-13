@@ -180,3 +180,52 @@ header.fixed #logo {
 
 #main h2 {font-size: 3em}
 #main span {color: #a0a0a0}
+
+/* Преимущества */
+
+#overview {
+    float: left;
+    background-image: url("https://2e8ram2s1li74atce18qz5y1-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/shutterstock_315465929.jpg");
+    background-blend-mode: multiply;
+    background-color: #454647;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+#overview h2 {font-size: 3em}
+#overview h4 {color: #ccc; font-size: 1,5em}
+
+#overview .img {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    margin-top: 50px;
+}
+
+#overview .img:nth-child(odd) {
+    margin-left: 18%;
+}
+
+#overview img {
+    background: #fafafa;
+    padding: 5px;
+    border: 2px solid silver;
+    float: left;
+    width: 100%;
+    max-width: 500px;
+}
+
+#overview span {
+    float: left;
+    width: 100%;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #fff;
+}
+
+
+
