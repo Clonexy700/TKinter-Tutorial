@@ -20,7 +20,70 @@ header{
     width: 100%;
     padding: 10px 0.5% 0 0.5%;
     background: transparent;
+    float: left;
+    position: fixed;
+
 }
 
+header #logo {
+    color: #fff;
+    cursor: pointer;
 
+}
 
+header #logo span{
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    font-family: 'Roboto Light', serif;
+}
+
+@media (min-width: 701px) {
+    #logo {
+        float: left;
+        width: 30%;
+        font-size: 1.1em;
+    }
+
+    #about {
+        float: right;
+        width: 67%;
+    }
+}
+
+@media (max-width: 700px) {
+    #logo {
+        margin-top: 15px;
+        float: left;
+        width: 100%;
+        font-size: 1.5em;
+    }
+    #about {
+        float: left;
+        width: 100%;
+    }
+}
+
+#about{
+    text-align: center;
+    font-size: 1em;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+    color: #b0b0b0;
+    text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+    margin-right: 7%;
+}
+
+.fixed {
+    z-index: 5000;
+    background-color: #fff;
+    border-bottom: 1px solid silver;
+}
