@@ -138,3 +138,24 @@ header.fixed #logo {
 #top h3{
     color: #eeeeee;
 }
+
+/* Возможности */
+
+#main {
+    padding: 100px 20%;
+    width: 60%;
+    float: left;
+    background-color: #f6f6f6;
+    border-top: 2px solid silver;
+    color: #484848;
+    font-size: 1.3em;
+}
+
+#main div {
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+#main h2 {font-size: 3em}
+#main span {color: #a0a0a0}
