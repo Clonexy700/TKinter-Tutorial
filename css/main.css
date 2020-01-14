@@ -242,11 +242,48 @@ header.fixed #logo {
     float: left;
     padding-bottom: 40px;
     padding-top: 70px;
-    border-top: 4px solid #ccc;
-    background: #f4f4f4;
+    border-top: 4px solid #ccc;;
+    background-color: #fff;
 }
 
 h5 {
     font-family: 'Roboto Slab', serif;
     font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#faq {
+    background-color: #fff;
+    border-top: 2px dashed #e4e3e3;
+    width: 100%;
+    float: left;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#faq div {
+    width: 25%;
+    margin-left: 6%;
+    float: left;
+}
+
+#faq .title {
+    font-weight: lighter;
+    color: #a3a0ad;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+#faq .heading {
+    color: #7d7d7d;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#faq p {
+    font-family: Arimo, Helvetica, sans-serif;
+    color: #4a4a4a;
+    font-size: 0.95em;
+    margin-bottom: 40px;
 }
