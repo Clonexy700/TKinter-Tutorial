@@ -134,7 +134,7 @@ header.fixed #logo {
 }
 
 #top h1{
-    padding-top: 20%;
+    padding-top: 27%;
 }
 
 #top h3{
@@ -246,12 +246,26 @@ header.fixed #logo {
     background-color: #fff;
 }
 
-h5 {
+a {
     font-family: 'Roboto Slab', serif;
     font-weight: lighter;
 }
 
-#contacts h5 {font-size: 3em; color: #4f4f4f}
+#contacts a {font-size: 3em; color: #4f4f4f}
+
+#contacts a {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 16px 60px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#contacts a:hover {
+    background-color: RoyalBlue;
+}
 
 #faq {
     background-color: #fff;
@@ -266,6 +280,24 @@ h5 {
     width: 25%;
     margin-left: 6%;
     float: left;
+}
+
+@media (min-width: 801px) {
+    #faq div {
+        width: 25%;
+        margin-left: 6%;
+        float: left;
+    }
+
+}
+
+@media (max-width: 800px) {
+    #faq div {
+        width: 80%;
+        margin-left: 10%;
+        float: left;
+    }
+    
 }
 
 #faq .title {
@@ -283,7 +315,48 @@ h5 {
 
 #faq p {
     font-family: Arimo, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
     color: #4a4a4a;
     font-size: 0.95em;
     margin-bottom: 40px;
 }
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding-top: 10%;
+
+}
+
+footer .year {
+    text-align: left;
+}
+
+footer .me {
+    border-top: 6px solid silver;
+    font-size: 1.7em;
+    line-height: 75px;
+    margin-left: 40px;
+    font-family: 'Roboto Light', serif;
+    color: #383838;
+}
+
+footer .me1 {
+    text-align: left;
+    color: #fff;
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.95em;
+    padding-left: 40px;
+    padding-top: 4%;
+}
+
+footer .links {
+    text-align: right;
+    padding-right: 48%;
+}
+
+
