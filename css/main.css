@@ -360,4 +360,43 @@ footer .links {
     padding-right: 47%;
 }
 
+#lessontop  {
+    width: 100%;
+    background-image: url("https://www.elsetge.cat/myimg/f/10-104478_animal-wallpaper-hd-anaconda-hd.jpg");
+    background-blend-mode: multiply;
+    background-color: #173539;
+    background-size: 2560px 1200px;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+}
 
+@media (min-width: 1101px) {
+    #lessontop{
+        font-size: 3em;
+        height: 1000px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+    #lessontop{
+        font-size: 2em;
+        height: 600px;
+    }
+}
+
+@media (max-width: 650px) {
+    #lessontop{
+        font-size: 1em;
+        padding-top: 50%;
+        height: 500px;
+    }
+}
+
+#lessontop h1{
+    padding-top: 27%;
+}
+
+#lessontop h3{
+    color: #eeeeee;
+}
