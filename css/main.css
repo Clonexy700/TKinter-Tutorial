@@ -252,20 +252,20 @@ a {
     font-weight: lighter;
 }
 
-#contacts a {font-size: 3em; color: #4f4f4f}
+#contacts a {font-size: 6em; color: #4f4f4f}
 
 #contacts a {
-    background-color: DodgerBlue;
+    background-color: #40b83f;
     border: none;
     color: white;
-    padding: 16px 60px;
+    padding: 28px 150px;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
 }
 
 #contacts a:hover {
-    background-color: RoyalBlue;
+    background-color: #379036;
 }
 
 #faq {
@@ -362,10 +362,11 @@ footer .links {
 
 #lessontop  {
     width: 100%;
-    background-image: url("https://www.elsetge.cat/myimg/f/10-104478_animal-wallpaper-hd-anaconda-hd.jpg");
+    background-image: url("https://images5.alphacoders.com/398/398637.jpg");
     background-blend-mode: multiply;
-    background-color: #285c63;
-    background-size: 2560px 1200px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #50c0c7;
     text-align: center;
     color: #fff;
     font-size: 3em;
@@ -399,4 +400,25 @@ footer .links {
 
 #lessontop h3{
     color: #eeeeee;
+}
+
+ul {
+    background: #fff;
+}
+
+.lesson1 p {
+    padding-left: 20px;
+    font-family: 'Roboto Light', serif;
+    font-size: 3em;
+    color: #343434;
+    background-color: #f3f3f3;
+    width: 15%;
+}
+
+.lesson1 a {
+    padding-left: 30px;
+    font-size: 2em;
+    color: #bcbcbc;
+    background-color: #5c5c5c;
+    font-family: Arimo, Helvetica, sans-serif;
 }
