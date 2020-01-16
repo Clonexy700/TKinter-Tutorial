@@ -402,23 +402,12 @@ footer .links {
     color: #eeeeee;
 }
 
-ul {
-    background: #fff;
+section {
+    background-color: #fff;
 }
 
-.lesson1 p {
-    padding-left: 20px;
-    font-family: 'Roboto Light', serif;
-    font-size: 3em;
-    color: #343434;
-    background-color: #f3f3f3;
-    width: 15%;
-}
-
-.lesson1 a {
-    padding-left: 30px;
-    font-size: 2em;
-    color: #bcbcbc;
-    background-color: #5c5c5c;
-    font-family: Arimo, Helvetica, sans-serif;
+.level h3 {
+    background-color: #e3ebf1;
+    color: #373a3c;
+    text-align: left;
 }
