@@ -35,9 +35,9 @@ header #logo {
 }
 
 header #logo span{
-    font-size: 1.7em;
+    font-size: 2em;
     line-height: 45px;
-    margin-left: 40px;
+    margin-left: 20px;
     font-family: 'Roboto Light', serif;
 }
 
@@ -402,12 +402,3 @@ footer .links {
     color: #eeeeee;
 }
 
-section {
-    background-color: #fff;
-}
-
-.level h3 {
-    background-color: #e3ebf1;
-    color: #373a3c;
-    text-align: left;
-}

@@ -108,7 +108,13 @@
           else
               $("header").attr("class", "fixed")
       });
+
+      $('.tab-menu a').hover(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+      })
   </script>
+
 </body>
 <footer>
     <div>
