@@ -3,6 +3,7 @@ body{
     padding: 0;
 }
 .doc{
+    padding-top: 3.5%;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -12,9 +13,9 @@ body{
 .sidebar{
     width: 320px;
     height: 100%;
-    background-image: url("https://wallpapershome.ru/images/pages/pic_v/10164.jpg");
+    background-image: url("https://img5.goodfon.com/wallpaper/nbig/2/83/green-eyes-scales-snake.jpg");
     background-size: cover;
-    background-color: #343  434;
+    background-color: #343434;
     overflow: hidden;
     float: left;
     color: #fff;
@@ -96,5 +97,104 @@ body{
 
 .sidebar a:hover {
     color: #343434;
+}
+
+header{
+    width: 100%;
+    padding: 10px 0.5% 0 0.5%;
+    background: black;
+    float: left;
+
+}
+
+header #logo {
+    color: #fff;
+    cursor: pointer;
+
+}
+
+header #logo span{
+    font-size: 2em;
+    line-height: 45px;
+    margin-left: 20px;
+    font-family: 'Roboto Light', serif;
+}
+
+@media (min-width: 701px) {
+    #logo {
+        float: left;
+        width: 30%;
+        font-size: 1.1em;
+    }
+
+    #about {
+        float: right;
+        width: 60%;
+    ;
+    }
+}
+
+@media (max-width: 700px) {
+    #logo {
+        margin-top: 15px;
+        float: left;
+        width: 100%;
+        font-size: 1.5em;
+    }
+    #about {
+        float: left;
+        width: 100%;
+    }
+}
+
+#about{
+    text-align: center;
+    font-size: 1em;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+    color: #b0b0b0;
+    text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+    margin-right: 7%;
+}
+
+.fixed {
+    z-index: 5000;
+    background-color: #fff;
+    border-bottom: 1px solid silver;
+}
+
+header.fixed #logo {
+    color: #343434;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #7c7c7c}
+
+.menu {
+    padding: 0;
+    list-style-type: none;
+}
+
+li ul {
+    display: none;
+    padding: 0;
+    list-style-type: none;
+}
+li.open ul {
+    display: block;
+    padding: 0;
+    list-style-type: none;
+}
+li:hover {
+    cursor: pointer;
+    color: red;
 }
 
