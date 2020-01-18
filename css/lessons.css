@@ -77,6 +77,7 @@ body{
     font-size: 18px;
     text-align: justify;
     margin-left: 17%;
+    padding-right: 3%;
 }
 .content span{
     background: #40b83f;
@@ -106,6 +107,7 @@ body{
     display: block;
     word-wrap: break-word;
     margin-left: 16.5%;
+    margin-right: 50%;
 }
 
 .show{
@@ -203,8 +205,23 @@ header.fixed #logo {
 .fixed #about a {color: #343434}
 .fixed #about a:hover {color: #7c7c7c}
 
-.popup-box {
-    padding-left: 30%;
+.popup-box a  {
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    font-weight: lighter;
+    margin-left: 23%;
+    background-color: #40b83f;
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+}
+
+.popup-box a:hover {
+    background-color: #379036;
+}
+
+.close-this {
+    padding-top: 2%;
 }
 
 
