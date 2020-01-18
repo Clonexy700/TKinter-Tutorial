@@ -66,17 +66,18 @@ body{
     font-size: 30px;
     padding-top: 60px;
     text-transform: uppercase;
-    margin-left: 310px;
+    margin-left: 23%;
 }
 
 .content h3{
-    margin-left: 17%;
+    margin-left: 23%;
 }
 
 .content p{
     font-size: 18px;
     text-align: justify;
-    margin-left: 17%;
+    margin-left: 24%;
+    margin-right: 6%;
     padding-right: 3%;
 }
 .content span{
@@ -106,8 +107,9 @@ body{
     padding: 1em 1.5em;
     display: block;
     word-wrap: break-word;
-    margin-left: 16.5%;
-    margin-right: 50%;
+    margin-left: 22%;
+    margin-right: 40%;
+
 }
 
 .show{
