@@ -37,9 +37,74 @@
     <div class="content">
         <span class="hide">Навигация</span>
         <h2>
-            GUI</h2>
+            Анимации</h2>
         <h3>
-            О TKinter</h3>
+            Методы</h3>
+        <p>Методы, создающие фигуры на холсте, возвращают численные идентификаторы этих объектов, которые можно присвоить переменным, через которые позднее обращаться к созданным фигурам. Основной шаблон для анимации с TKinter - написать функцию, которая рисует один кадр.</p>
+        <p>Для этого нужно написать функцию и  вызвать её. Рассмотрим следующий код. </p>
+        <pre>
+            from tkinter import *
+            root = Tk() # Создание окна
+            c = canvas(root, width=300, height=200, bg='white') # Холст
+            c.pack() # Упаковка холста
+
+            ball = c.create_oval(0, 100, 40, 140, fill='green') # Объект
+
+            def motion(): # Функция движения
+                c.move(ball, 1, 0)
+                if c.coords(ball)[2] < 300:
+                    root.after(10, motion)
+            motion() # Вызов функции
+
+            root.mainloop() # Запуск окна
+
+        </pre>
+        <p>Больше всего здесь нам интересна функция движения объекта. c.move(ball, 1, 0) - Двигает созданный объект ball по координатам x, y, которые равны значениям 1 и 0, значит объект двигается только по координате x</p>
+        <p> Данная часть кода - </p>
+        <pre>if c.coords(ball)[2] < 300:
+                 root.after(10, motion)
+        </pre>
+        <p>Отвечает за то, чтобы шар двигался, пока на координатах он не достигнет значения меньше 300. Самое важное и нужное здесь, это функция обновления - root.after(10, motion), где числовое значение это количество милисекунд перед каждым обновлением. </p>
+        <h3> Задание </h3>
+        <p>Анимируйте данный мини-поезд с помощью функций описанных выше</p>
+        <p>Код поезда:</p>
+        <pre>
+            c = Canvas(root, width=300, height=200, bg="white")
+            c.pack()
+
+            vagon1 = c.create_rectangle(0, 50, 60, 90, fill='blue')
+            line = c.create_line(60, 70, 70, 70, fill='brown', width=6)
+            vagon2 = c.create_rectangle(70, 50, 130, 90, fill='blue')
+            relsa = c.create_line(0, 90, 300, 90, fill='gray', width=3)</pre>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                    from tkinter import *
+
+                    root = Tk()
+
+                    c = Canvas(root, width=300, height=200, bg="white")
+                    c.pack()
+
+                    vagon1 = c.create_rectangle(0, 50, 60, 90, fill='blue')
+                    line = c.create_line(60, 70, 70, 70, fill='brown', width=6)
+                    vagon2 = c.create_rectangle(70, 50, 130, 90, fill='blue')
+                    relsa = c.create_line(0, 90, 300, 90, fill='gray', width=3)
+
+                    def motion():
+                        c.move(vagon1, 1, 0)
+                        c.move(vagon2, 1, 0)
+                        c.move(line, 1, 0)
+                        root.after(20, motion)
+                    motion()
+
+                    root.mainloop()</pre>
+            </div>
+        </div>
+
+
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
