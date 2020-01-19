@@ -27,8 +27,8 @@
         <ul>
             <li><a href="../tasks/1.html">Введение</a></li>
             <li><a href="../tasks/2.html">Холсты</a></li>
-            <li><a href="../tasks/3.html">3</a></li>
-            <li><a href="../tasks/4.html">4</a></li>
+            <li><a href="../tasks/3.html">Анимации</a></li>
+            <li><a href="../tasks/4.html">GUI, Начало</a></li>
             <li><a href="../tasks/5.html">5</a></li>
             <li><a href="../tasks/6.html">6</a></li>
             <li><a href="../tasks/7.html">7</a></li>
@@ -88,6 +88,65 @@
             c.create_arc(10, 10, 190, 190, start=240, extent=100, style=CHORD)
             c.create_arc(10, 10, 190, 190, start=160, extent=-70, style=ARC, width=5)</pre>
         <p><img src="../data/arc.png" alt=""></p>
+        <h3>
+            Дополнительные cвойства к примитивам</h3>
+        <p>Свойства: fill='color', заполняет примитив выбранным цветом. </p> <p>outline='color' - цвет обводки примитива</p> <p>width=3 - ширина линии обводки</p> <p>activefill='color' activeoutline='color' - цвет заливки и обводки при наведении на них курсора мыши</p>
+        <pre>
+            from tkinter import *
+            root = Tk()
+            c = Canvas(root, width=400, height=400, bg='white')
+            c.pack()
+            c.create_oval(10, 120, 190, 190, fill='red', outline='white')
+            root.mainloop()</pre>
+        <p><img src="../data/exampler.png" alt=""></p>
+        <h3>Таблица цветов TKinter</h3>
+        <p><img src="../data/ColorChart.png" alt=""></p>
+        <h3>Задания</h3>
+        <p>Нарисуйте пропеллер, как показано ниже</p>
+        <p><img src="../data/propeller.png" alt=""></p>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                    from tkinter import *
+
+                    root = Tk()
+
+                    c = Canvas(root, width=500, height=500, bg='white')
+                    c.pack()
+                    c.create_oval(225, 235, 275, 285, width=2)
+                    c.create_oval(200, 210, 300, 310, width=2)
+                    c.create_oval(225, 80, 275, 210, width=2)
+                    c.create_oval(225, 310, 275, 450, width=2)
+                    c.create_oval(60, 240, 200, 285, width=2)
+                    c.create_oval(300, 240, 440, 285, width=2)
+                    root.mainloop()
+                </pre>
+            </div>
+        </div>
+        <p>Нарисуйте диаграмму, как показано ниже</p>
+        <p><img src="../data/tort.png" alt=""></p>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                    from tkinter import *
+
+                    root = Tk()
+
+                    c = Canvas(root, width=500, height=500, bg='white')
+                    c.create_oval(20, 20, 200, 200, fill='lightgoldenrod', outline='white')
+                    c.create_arc(20, 20, 200, 200, start=180, extent=25, fill='bisque')
+                    c.create_arc(20, 20, 200, 200, start=160, extent=-320, style=ARC, outline='salmon', width=5)
+                    c.create_arc(10, 10, 210, 210, start=20, extent=-230, style=ARC, outline='turquoise1', width=5)
+                    root.mainloop()
+                </pre>
+            </div>
+        </div>
+
+
 
 
 

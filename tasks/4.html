@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/lessons.css">
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -20,26 +23,52 @@
         <div class="sidehide">
             <i class="fa fa-times" aria-hidden="true"></i>
         </div>
-        <p>TKinter Tutorial</p>
+        <p>Главы туториала</p>
         <ul>
-            <li><a href="1.html">Вступление</a></li>
-            <li><a href="2.html">Какая то там</a></li>
-            <li><a href="3.html">3</a></li>
-            <li><a href="4.html">4</a></li>
-            <li><a href="5.html">5</a></li>
-            <li><a href="6.html">6</a></li>
-            <li><a href="7.html">7</a></li>
+            <li><a href="../tasks/1.html">Введение</a></li>
+            <li><a href="../tasks/2.html">Холсты</a></li>
+            <li><a href="../tasks/3.html">Анимации</a></li>
+            <li><a href="../tasks/4.html">GUI, Начало</a></li>
+            <li><a href="../tasks/5.html">5</a></li>
+            <li><a href="../tasks/6.html">6</a></li>
+            <li><a href="../tasks/7.html">7</a></li>
         </ul>
     </div>
     <div class="content">
-        <span class="hide">Show Sidebar</span>
+        <span class="hide">Навигация</span>
         <h2>
-            sidebar</h2>
+            Введение</h2>
+        <h3>
+            О TKinter</h3>
         <p>
+            Tkinter (от англ. Tk interface) — кросс-платформенная графическая библиотека на основе средств Tk.  Под графическим интерфейсом пользователя (GUI) подразумеваются все те окна, кнопки, текстовые поля для ввода, скроллеры, списки, радиокнопки, флажки и др., которые вы видите на экране, открывая то или иное приложение. Через них вы взаимодействуете с программой и управляете ею. Все эти элементы интерфейса вместе будем называть виджетами (widgets). </p> <p>В настоящее время почти все приложения, которые создаются для конечного пользователя, имеют GUI. Редкие программы, подразумевающие взаимодействие с человеком, остаются консольными. </p> <p> Существует множество библиотек GUI. Tk далеко не самая популярная, хотя с ее использованием написано не мало проектов. Однако по ряду причин она была выбрана для Python по-умолчанию. Установочный файл Питона обычно уже включает пакет tkinter в составе стандартной библиотеки наряду с другими модулями. </p> <p> Не вдаваясь в подробности, Tkinter можно охарактеризовать как переводчик с языка Python на язык Tcl. Вы пишете программу на Python, а код модуля tkinter у вас за спиной переводит ваши инструкции на язык Tcl, который понимает библиотека Tk. </p> <p> Приложения с графическим интерфейсом пользователя событийно-ориентированные. Вы уже должны иметь представление о структурном и желательно объектно-ориентированном программировании. Событийно-ориентированное ориентировано на события. То есть та или иная часть программного кода начинает выполняться лишь тогда, когда случается то или иное событие. </p>
 
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        <p> Событийно-ориентированное программирование базируется на объектно-ориентированном и структурном. Даже если мы не создаем собственных классов и объектов, то все-равно ими пользуемся. Все виджеты – объекты, порожденные встроенными классами.
 
+            События бывают разными. Сработал временной фактор, кто-то кликнул мышкой или нажал Enter, начал вводить текст, переключил радиокнопки, прокрутил страницу вниз и т. д. Когда случается что-то подобное, то, если был создан соответствующий обработчик, происходит срабатывание определенной части программы, что приводит к какому-либо результату.
         </p>
+        <p>
+            Структуру приложения, примитивы и прочее мы уже рассмотрим в следующих главах, а пока что, следующая задача.
+            Tkinter импортируется стандартно для модуля Python любым из способов: </p> <pre> import tkinter, from tkinter import *, import tkinter as tk </pre><p> Можно импортировать отдельные классы, что делается редко. В данном курсе будет в основном использоваться </p> <pre> from tkinter import * </pre>
+        <h3>
+            Задание</h3>
+        <p>С помощью функции _test проверьте корректность работы TKinter, появится следующее окно:</p>
+        <p><img src="../data/tkintertest.png" alt=""></p>
+        <p>
+            ВАЖНО: Для этого задания импортируйте модуль tkinter только с помощью </p> <pre> import tkinter </pre>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                    import tkinter
+                    tkinter._test</pre>
+            </div>
+        </div>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </div>
 </div>
 <script type="text/javascript">
@@ -57,6 +86,37 @@
         }
 
     );
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed")
+    });
+
+    $('.tab-menu a').hover(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
+<script>
+    $(".popup-content").hide();
+    $(".popup-title").click(function(){
+        $(this).toggleClass("active").next().slideToggle(0);
+        return false;
+    });
+    $(".popup-content .close-this").click(function(){
+        $(".popup-title", $(this).parents(".popup-box")).click();
+        return false;
+    });
 </script>
 </body>
 </html>
