@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/lessons.css">
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -20,24 +23,77 @@
         <div class="sidehide">
             <i class="fa fa-times" aria-hidden="true"></i>
         </div>
-        <p>TKinter Tutorial</p>
+        <p>Главы туториала</p>
         <ul>
-            <li><a href="1.html">Вступление</a></li>
-            <li><a href="2.html">Какая то там</a></li>
-            <li><a href="3.html">3</a></li>
-            <li><a href="4.html">4</a></li>
-            <li><a href="5.html">5</a></li>
-            <li><a href="6.html">6</a></li>
-            <li><a href="7.html">7</a></li>
+            <li><a href="../tasks/1.html">Введение</a></li>
+            <li><a href="../tasks/2.html">Холсты</a></li>
+            <li><a href="../tasks/3.html">3</a></li>
+            <li><a href="../tasks/4.html">4</a></li>
+            <li><a href="../tasks/5.html">5</a></li>
+            <li><a href="../tasks/6.html">6</a></li>
+            <li><a href="../tasks/7.html">7</a></li>
         </ul>
     </div>
     <div class="content">
-        <span class="hide">Show Sidebar</span>
+        <span class="hide">Навигация</span>
         <h2>
-            sidebar</h2>
-        <p>
-            lorem 2
-        </p>
+            Холсты</h2>
+        <h3>
+            Создание окон</h3>
+        <p>В современных операционных системах любое пользовательское приложение заключено в окно, которое можно назвать главным, так как в нем располагаются все остальные виджеты. Объект окна верхнего уровня создается от класса Tk модуля tkinter. Переменную, связываемую с объектом, часто называют root (корень), но называть её можно, как-угодно:</p>
+        <pre>root = Tk()</pre>
+        <p>Метод mainloop() объекта Tk запускает главный цикл обработки событий, что в том числе приводит к отображению главного окна на экране:</p>
+        <pre>root.mainloop()</pre>
+        <p>Таким образом пустое окно программы мы можем запустить с помощью простого кода</p>
+        <pre>
+            from tkinter import *
+            root = Tk()
+            root.mainloop()</pre>
+        <h3>Холст</h3>
+        <p>В TKinter от класса Canvas создаются объекты-холсты, на которых можно "рисовать", размещая различные фигуры и объекты. Делается это с помощью вызовов соответствующих методов.</p>
+        <p>При создании экземпляра Canvas необходимо указать его ширину и высоту. При размещении геометрических примитивов и других объектов указываются их координаты на холсте. Точкой отсчета является верхний левый угол.</p>
+        <p><img src="../data/canvas.png" alt=""></p>
+        <p>С помощью кода ниже создаётся холст.</p>
+        <pre>
+            from tkinter import *
+            root = Tk()
+            c = Canvas(root, width=200, height=200, bg='white') # Объект - холст
+            c.pack() # Метод упаковки объекта
+            root.mainloop()</pre>
+        <p><img src="../data/canvasexample.png" alt=""></p>
+        <h3>Графические примитивы</h3>
+        <p>В TKinter есть графические примитивы, с помощью которых мы можем рисовать.</p>
+        <p>Линии можно создавать методом create_line(), где перед этим мы указываем место, где создается примитив.  </p>
+        <pre>c.create_line(x1, y1, x2, y2)</pre>
+        <p><img src="../data/line.png" alt=""></p>
+        <p>Прямоугольники можно создать методом create_rectangle(), где координаты x1 и y1 - это координаты верхнего левого угла, а x2 y2 - нижнего правого.</p>
+        <pre>c.create_rectangle(x1, y1, x2, y2)</pre>
+        <p><img src="../data/rectangle.png" alt=""></p>
+        <p>Методом create_polygon() рисуется произвольный многоугольник путем задания координат каждой его точки:</p>
+        <pre>
+            c.create_polygon(100, 10, 20, 90, 180, 90) # Треугольник
+            c.create_polygon(40, 110, 160, 110, 190, 180, 10, 180) # Трапеция
+            c.create_polygon((40, 110), (160, 110), (190, 180), (10, 180))</pre>
+        <p><img src="../data/polygon.png" alt=""></p>
+        <p>Метод create_oval() создает эллипсы. При этом задаются координаты гипотетического прямоугольника, описывающего эллипс. Если нужно получить круг, то соответственно описываемый прямоугольник должен быть квадратом.</p>
+        <pre>
+            c.create_oval(50, 10, 150, 110)
+            c.create_oval(10, 120, 190, 190)</pre>
+        <p><img src="../data/oval.png" alt=""></p>
+        <p>Более сложные для понимания фигуры получаются при использовании метода create_arc(). В зависимости от значения опции style можно получить сектор (по умолчанию), сегмент (CHORD) или дугу (ARC). Также как в случае create_oval() координаты задают прямоугольник, в который вписана окружность (или эллипс), из которой "вырезают" сектор, сегмент или дугу. Опции start присваивается градус начала фигуры, extent определяет угол поворота.</p>
+        <pre>
+            c.create_oval(10, 10, 190, 190)
+            c.create_arc(10, 10, 190, 190, start=0, extent=45)
+            c.create_arc(10, 10, 190, 190, start=180, extent=25)
+            c.create_arc(10, 10, 190, 190, start=240, extent=100, style=CHORD)
+            c.create_arc(10, 10, 190, 190, start=160, extent=-70, style=ARC, width=5)</pre>
+        <p><img src="../data/arc.png" alt=""></p>
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </div>
 </div>
 <script type="text/javascript">
@@ -55,6 +111,37 @@
         }
 
     );
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed")
+    });
+
+    $('.tab-menu a').hover(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
+<script>
+    $(".popup-content").hide();
+    $(".popup-title").click(function(){
+        $(this).toggleClass("active").next().slideToggle(0);
+        return false;
+    });
+    $(".popup-content .close-this").click(function(){
+        $(".popup-title", $(this).parents(".popup-box")).click();
+        return false;
+    });
 </script>
 </body>
 </html>
