@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/lessons.css">
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -20,26 +23,58 @@
         <div class="sidehide">
             <i class="fa fa-times" aria-hidden="true"></i>
         </div>
-        <p>TKinter Tutorial</p>
+        <p>Главы туториала</p>
         <ul>
-            <li><a href="1.html">Вступление</a></li>
-            <li><a href="2.html">Какая то там</a></li>
-            <li><a href="3.html">3</a></li>
-            <li><a href="4.html">4</a></li>
-            <li><a href="5.html">5</a></li>
-            <li><a href="6.html">6</a></li>
-            <li><a href="7.html">7</a></li>
+            <li><a href="../tasks/1.html">Введение</a></li>
+            <li><a href="../tasks/2.html">Холсты</a></li>
+            <li><a href="../tasks/3.html">Анимации</a></li>
+            <li><a href="../tasks/4.html">GUI, Начало</a></li>
+            <li><a href="../tasks/5.html">Поле ввода</a></li>
+            <li><a href="../tasks/6.html">Ещё виджеты</a></li>
+            <li><a href="../tasks/7.html">Меню</a></li>
         </ul>
     </div>
     <div class="content">
-        <span class="hide">Show Sidebar</span>
+        <span class="hide">Навигация</span>
         <h2>
-            sidebar</h2>
+            GUI</h2>
+        <h3>Создание меню</h3>
         <p>
+            Для создания иерархического меню в tkinter и Python применяется виджет Menu.
 
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-
+            Меню может содержать много элементов, причем эти элементы сами могут представлять меню и содержать другие элементы. В зависимости от того, какой тип элементов мы хотим добавить в меню, будет отличаться метод, используемый для их добавления. В частности, нам доступны следующие методы:
         </p>
+        <p><b>add_command(options)</b>: добавляет элемент меню через параметр options</p>
+
+        <p><b>add_cascade(options)</b>: добавляет элемент меню, который в свою очередь может представлять подменю</p>
+
+        <p><b>add_separator()</b>: добавляет линию-разграничитель</p>
+
+        <p><b>add_radiobutton(options)</b>: добавляет в меню переключатель</p>
+
+        <p><b>add_checkbutton(options)</b>: добавляет в меню флажок</p>
+        <p>Простейшее меню:</p>
+        <pre>
+            from tkinter import *
+
+            root = Tk()
+            root.geometry("300x250")
+
+            main_menu = Menu()
+            main_menu.add_cascade(label="File")
+            main_menu.add_cascade(label="Edit")
+            main_menu.add_cascade(label="View")
+
+            root.config(menu=main_menu)
+            root.mainloop()</pre>
+
+        <p><img src="../data/menu.png" alt=""></p>
+
+        <p>Для добавления пунктов меню у объекта Menu вызывается метод add_cascade(). В этот метод передаются параметры пункта меню, в данном случае они представлены текстовой меткой, устанавливаемой через параметр label.
+
+            Но просто создать меню - еще недостаточно. Его надо установить для текущего окна с помощью параметра menu в методе config(). В итоге графическое окно будет иметь меню:</p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </div>
 </div>
 <script type="text/javascript">
@@ -57,6 +92,37 @@
         }
 
     );
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed")
+    });
+
+    $('.tab-menu a').hover(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
+<script>
+    $(".popup-content").hide();
+    $(".popup-title").click(function(){
+        $(this).toggleClass("active").next().slideToggle(0);
+        return false;
+    });
+    $(".popup-content .close-this").click(function(){
+        $(".popup-title", $(this).parents(".popup-box")).click();
+        return false;
+    });
 </script>
 </body>
 </html>

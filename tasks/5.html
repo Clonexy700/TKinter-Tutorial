@@ -30,8 +30,8 @@
             <li><a href="../tasks/3.html">Анимации</a></li>
             <li><a href="../tasks/4.html">GUI, Начало</a></li>
             <li><a href="../tasks/5.html">Поле ввода</a></li>
-            <li><a href="../tasks/6.html">6</a></li>
-            <li><a href="../tasks/7.html">7</a></li>
+            <li><a href="../tasks/6.html">Ещё виджеты</a></li>
+            <li><a href="../tasks/7.html">Меню</a></li>
         </ul>
     </div>
     <div class="content">
@@ -72,6 +72,44 @@
         <p>Для вывода сообщения здесь применяется дополнительный модуль messagebox, содержащий функцию showinfo(), которая собственно и выводит введенный в текстовое поле текст. Для получения введенного текста используется комп StringVar, как было описано в одной из предыдущих тем.
 
             Теперь создадим пример с формой ввода:</p>
+
+        <pre>
+            from tkinter import *
+            from tkinter import messagebox
+
+            def show_message():
+                messagebox.showinfo("GUI Python", message.get())
+
+            root = Tk()
+
+            message = StringVar()
+
+            message_entry = Entry(textvariable=message)
+            message_entry.place(relx=.5, rely=.1, anchor="c")
+
+            message_button = Button(text="Click Me", command=show_message)
+            message_button.place(relx=.5, rely=.5, anchor="c")
+
+            root.mainloop()</pre>
+        <p><img src="../data/entry.png" alt=""></p>
+
+        <p>Для вывода сообщения здесь применяется дополнительный модуль messagebox, содержащий функцию showinfo(), которая собственно и выводит введенный в текстовое поле текст. Для получения введенного текста используется StringVar.</p>
+
+        <h3>Методы Entry</h3>
+        <p><b>insert(index, str)</b>: вставляет в текстовое поле строку по определенному индексу
+
+        </p>
+
+        <p>
+            <b>get()</b>: возвращает введенный в текстовое поле текст
+        </p>
+
+        <p>
+            <b>delete(first, last=None)</b>: удаляет символ по индексу first. Если указан параметр last, то удаление производится до индекса last. Чтобы удалить до конца, в качестве второго параметра можно использовать значение END.
+        </p>
+
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </div>
 </div>

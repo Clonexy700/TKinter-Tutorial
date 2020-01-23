@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/lessons.css">
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -20,26 +23,181 @@
         <div class="sidehide">
             <i class="fa fa-times" aria-hidden="true"></i>
         </div>
-        <p>TKinter Tutorial</p>
+        <p>Главы туториала</p>
         <ul>
-            <li><a href="1.html">Вступление</a></li>
-            <li><a href="2.html">Какая то там</a></li>
-            <li><a href="3.html">3</a></li>
-            <li><a href="4.html">4</a></li>
-            <li><a href="5.html">5</a></li>
-            <li><a href="6.html">6</a></li>
-            <li><a href="7.html">7</a></li>
+            <li><a href="../tasks/1.html">Введение</a></li>
+            <li><a href="../tasks/2.html">Холсты</a></li>
+            <li><a href="../tasks/3.html">Анимации</a></li>
+            <li><a href="../tasks/4.html">GUI, Начало</a></li>
+            <li><a href="../tasks/5.html">Поле ввода</a></li>
+            <li><a href="../tasks/6.html">Ещё виджеты</a></li>
+            <li><a href="../tasks/7.html">Меню</a></li>
         </ul>
     </div>
     <div class="content">
-        <span class="hide">Show Sidebar</span>
+        <span class="hide">Навигация</span>
         <h2>
-            sidebar</h2>
-        <p>
+            Виджеты</h2>
+        <h3>Checkbutton</h3>
+        <p>Элемент Checkbutton представляет собой флажок, который может находиться в двух состояниях: отмеченном и неотмеченном. Простейший Checkbutton:</p>
+        <pre>
+            from tkinter import *
 
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            root = Tk()
+            root.geometry('100x100')
 
-        </p>
+            ismarried = IntVar()
+
+            ismarried_checkbutton = Checkbutton(text="Женат/Замужем", variable=ismarried)
+            ismarried_checkbutton.pack()
+
+            ismarried_label = Label(textvariable=ismarried)
+            ismarried_label.place(relx=.5, rely=.5, anchor="c")
+
+            root.mainloop()</pre>
+
+        <p><img src="../data/checkbutton.png" alt=""></p>
+
+        <p>Конструктор Checkbutton принимает ряд параметров, с помощью которого можно настроить отображение флажков:</p>
+
+        <p><b>activebackground</b>: фоновый цвет флажка в нажатом состоянии </p>
+
+        <p><b>activeforeground</b>: цвет текста флажка в нажатом состоянии</p>
+
+        <p><b>bg</b>: фоновый цвет флажка</p>
+
+        <p><b>bitmap</b>: монохромное изображение для флажка</p>
+
+        <p><b>bd</b>: граница вокруг флажка</p>
+
+        <p><b>command</b>: ссылка на функцию, которая вызывается при нажатии на флажок</p>
+
+        <p><b>cursor</b>: курсор при наведении на элемент</p>
+
+        <p><b>disabledforeground</b>: цвет текста в состоянии DISABLED</p>
+
+        <p><b>font</b>: шрифт</p>
+
+        <p><b>fg</b>: цвет текста</p>
+
+        <p><b>height</b>: высота элемента</p>
+
+        <p><b>image</b>: графическое изображение, отображаемое на элементе</p>
+
+        <p><b>justify</b>: выравнивание текста, принимает значения CENTER, LEFT, RIGHT</p>
+
+        <p><b>offvalue</b>: значение ассоциированной с флажком переменной IntVar в неотмеченном состоянии, по умолчанию равно 0</p>
+
+        <p><b>onvalue</b>: значение ассоциированной с флажком переменной IntVar в отмеченном состоянии, по умолчанию равно 1</p>
+
+        <p><b>padx</b>: отступы справа и слева от текста до границы флажка</p>
+
+        <p><b>pady</b>: отступы сверху и снизу от текста до границы флажка</p>
+
+        <p><b>relief</b>: стиль флажка, по умолчанию имеет значение FLAT</p>
+
+        <p><b>selectcolor</b>: цвет квадратика флажка</p>
+
+        <p><b>selectimage</b>: изображение на флажке, когда он находится в отмеченном состоянии</p>
+
+        <p><b>state</b>: состояние элемента, может принимать значения NORMAL (по умолчанию), DISABLED и ACTIVE</p>
+
+        <p><b>text</b>: текст элемента</p>
+
+        <p><b>underline</b>: индекс подчеркнутого символа в тексте флажка</p>
+
+        <p><b>variable</b>: ссылка на переменную, как правило, типа IntVar, которая хранит состояние флажка</p>
+
+        <p><b>width</b>: ширина элемента</p>
+
+        <p><b>wraplength</b>: устанавливает перенос символов на другую строку в тексте элемента</p>
+
+        <h3>Radiobutton</h3>
+
+        <p>Элемент Radiobutton представляет переключатель, который может находиться в двух состояниях: отмеченном или неотмеченном. Но в отличие от Checkbutton переключатели могут создавать группу, из которой одномоментно мы можем выбрать только один переключатель. Используем переключатели:</p>
+
+        <pre>
+            from tkinter import *
+
+            root = Tk()
+            root.title("GUI на Python")
+            root.geometry("150x170")
+
+            header = Label(text="Выберите курс", padx=15, pady=10)
+            header.grid(row=0, column=0, sticky=W)
+
+            lang = IntVar()
+
+            python_checkbutton = Radiobutton(text="Python", value=1, variable=lang, padx=15, pady=10)
+            python_checkbutton.grid(row=1, column=0, sticky=W)
+
+            javascript_checkbutton = Radiobutton(text="JavaScript", value=2, variable=lang, padx=15, pady=10)
+            javascript_checkbutton.grid(row=2, column=0, sticky=W)
+
+            selection = Label(textvariable=lang, padx=15, pady=10)
+            selection.grid(row=3, column=0, sticky=W)
+
+            root.mainloop()</pre>
+
+        <p><img src="../data/radiobutton.png" alt=""></p>
+
+        <p>Для настройки переключателя конструктор Radiobutton, как и другие конструкторы виджетов, принимает два параметра:</p>
+
+        <p>Конструктор Checkbutton принимает ряд параметров, с помощью которого можно настроить отображение флажков:</p>
+
+        <p><b>activebackground</b>: фоновый цвет флажка в нажатом состоянии </p>
+
+        <p><b>activeforeground</b>: цвет текста флажка в нажатом состоянии</p>
+
+        <p><b>bg</b>: фоновый цвет флажка</p>
+
+        <p><b>bitmap</b>: монохромное изображение для флажка</p>
+
+        <p><b>borderwidth</b>: граница вокруг переключателя</p>
+
+        <p><b>command</b>: ссылка на функцию, которая вызывается при нажатии на флажок</p>
+
+        <p><b>cursor</b>: курсор при наведении на элемент</p>
+
+        <p><b>font</b>: шрифт</p>
+
+        <p><b>fg</b>: цвет текста</p>
+
+        <p><b>height</b>: высота элемента</p>
+
+        <p><b>image</b>: графическое изображение, отображаемое на элементе</p>
+
+        <p><b>justify</b>: выравнивание текста, принимает значения CENTER, LEFT, RIGHT</p>
+
+        <p><b>padx</b>: отступы справа и слева от текста до границы флажка</p>
+
+        <p><b>pady</b>: отступы сверху и снизу от текста до границы флажка</p>
+
+        <p><b>relief</b>: стиль флажка, по умолчанию имеет значение FLAT</p>
+
+        <p><b>selectcolor</b>: цвет квадратика флажка</p>
+
+        <p><b>selectimage</b>: изображение на флажке, когда он находится в отмеченном состоянии</p>
+
+        <p><b>state</b>: состояние элемента, может принимать значения NORMAL (по умолчанию), DISABLED и ACTIVE</p>
+
+        <p><b>text</b>: текст элемента</p>
+
+        <p><b>textvariable</b>: устанавливает привязку к переменной StringVar, которая задает текст переключателя</p>
+
+        <p><b>underline</b>: индекс подчеркнутого символа в тексте флажка</p>
+
+        <p><b>variable</b>: ссылка на переменную, как правило, типа IntVar, которая хранит состояние флажка</p>
+
+        <p><b>value</b>: значение переключателя</p>
+
+        <p><b>width</b>: ширина элемента</p>
+
+        <p><b>wraplength</b>: устанавливает перенос символов на другую строку в тексте элемента</p>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </div>
 </div>
 <script type="text/javascript">
@@ -57,6 +215,37 @@
         }
 
     );
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed")
+    });
+
+    $('.tab-menu a').hover(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
+<script>
+    $(".popup-content").hide();
+    $(".popup-title").click(function(){
+        $(this).toggleClass("active").next().slideToggle(0);
+        return false;
+    });
+    $(".popup-content .close-this").click(function(){
+        $(".popup-title", $(this).parents(".popup-box")).click();
+        return false;
+    });
 </script>
 </body>
 </html>
