@@ -247,25 +247,36 @@ header.fixed #logo {
     background-color: #fff;
 }
 
-a {
-    font-family: 'Roboto Slab', serif;
-    font-weight: lighter;
-}
-
-#contacts a {font-size: 6em; color: #4f4f4f}
-
-#contacts a {
-    background-color: #40b83f;
-    border: none;
-    color: white;
-    padding: 28px 150px;
-    font-size: 16px;
-    cursor: pointer;
+#buttons {
+    padding-top: 50px;
     text-align: center;
 }
 
-#contacts a:hover {
-    background-color: #379036;
+/* start da css for da buttons */
+.btn {
+    border-radius: 5px;
+    padding: 20px 60px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.btn:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.green {
+    background-color: #3bc84b;
+    box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.green:hover {
+    background-color: #5dd36d;
 }
 
 #faq {
