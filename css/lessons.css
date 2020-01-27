@@ -236,3 +236,32 @@ header.fixed #logo {
 .close-this {
     padding-top: 2%;
 }
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding-top: 5%;
+
+}
+
+footer div {
+    text-align: center;
+}
+
+footer .me {
+    font-size: 1.7em;
+    line-height: 75px;
+    font-family: 'Roboto Light', serif;
+    color: #383838;
+}
+
+footer .me1 {
+    text-align: center;
+    color: #fff;
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.95em;
+}
