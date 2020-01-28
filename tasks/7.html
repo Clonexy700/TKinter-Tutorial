@@ -68,11 +68,84 @@
             root.config(menu=main_menu)
             root.mainloop()</pre>
 
-        <p><img src="../data/menu.png" alt=""></p>
-
         <p>Для добавления пунктов меню у объекта Menu вызывается метод add_cascade(). В этот метод передаются параметры пункта меню, в данном случае они представлены текстовой меткой, устанавливаемой через параметр label.
 
             Но просто создать меню - еще недостаточно. Его надо установить для текущего окна с помощью параметра menu в методе config(). В итоге графическое окно будет иметь меню:</p>
+
+        <p><img src="../data/menu.png" alt=""></p>
+
+        <p>Теперь добавим подменю:</p>
+
+        <pre>
+            from tkinter import *
+
+            root = Tk()
+            root.title("GUI на Python")
+            root.geometry("300x250")
+
+            main_menu = Menu()
+
+            file_menu = Menu()
+            file_menu.add_command(label="New")
+            file_menu.add_command(label="Save")
+            file_menu.add_command(label="Open")
+            file_menu.add_separator()
+            file_menu.add_command(label="Exit")
+
+
+            main_menu.add_cascade(label="File", menu=file_menu)
+            main_menu.add_cascade(label="Edit")
+            main_menu.add_cascade(label="View")
+
+            root.config(menu=main_menu)
+
+            root.mainloop()</pre>
+
+        <p>Здесь определяется подменю file_menu, которое добавляется в первый пункт основного меню благодаря установке опции menu=file_menu:</p>
+
+        <pre>main_menu.add_cascade(label="File", menu=file_menu)</pre>
+
+        <p>Если необходимо настроить меню, то мы можем задать в конструкторе Menu следующие опции:</p>
+
+        <p><b>activebackground</b>: цвет активного пункта меню</p>
+        <p><b>activeborderwidth</b>: толщина границы активного пункта меню</p>
+        <p><b>activeforeground</b>: цвет текста активного пункта меню</p>
+        <p><b>bg</b>: фоновый цвет</p>
+        <p><b>bd</b>: толщина границы</p>
+        <p><b>cursor</b>: курсор указателя мыши при наведении на меню</p>
+        <p><b>disabledforeground</b>: цвет, когда меню находится в состоянии DISABLED</p>
+        <p><b>font</b>: шрифт текста</p>
+        <p><b>fg</b>: цвет текста</p>
+        <p><b>tearoff</b>: меню может быть отсоединено от графического окна. В частности, при создании подменю а скриншоте можно увидеть прерывающуюся линию в верху подменю, за которую его можно отсоединить. Однако при значении tearoff=0 подменю не сможет быть отсоединено.</p>
+
+        <p><img src="../data/menu_padding.png" alt=""></p>
+
+        <h3>Взаимодействие с меню</h3>
+
+        <p>Отличительной особенностью элементов меню является способность реагировать на нажатия пользователя. Для этого у каждого элемента меню можно задать параметр command, который устанавливает ссылку на функцию, выполняемую при нажатии.</p>
+
+        <pre>
+            from tkinter import *
+            from tkinter import messagebox
+            
+            
+            def edit_click():
+                messagebox.showinfo("GUI Python", "Нажата опция Edit")
+            
+            root = Tk()
+            root.title("GUI на Python")
+            root.geometry("300x250")
+            
+            main_menu = Menu()
+            
+            main_menu.add_cascade(label="File")
+            main_menu.add_cascade(label="Edit", command=edit_click)
+            main_menu.add_cascade(label="View")
+            
+            root.config(menu=main_menu)
+            
+            root.mainloop()
+        </pre>
 
         <footer>
             <div>
@@ -94,7 +167,6 @@
             $('.doc').toggleClass("show");
 
         }
-
     );
 </script>
 <script type="text/javascript">
