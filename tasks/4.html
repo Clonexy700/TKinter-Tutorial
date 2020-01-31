@@ -193,7 +193,7 @@
 
         </p>
 
-        <p><b>anchor</b>: устанавливает опции растяжения элемента. Может принимать значения n, e, s, w, ne, nw, se, sw, c, которые являются сокращениями от Noth(север - вверх), South (юг - низ), East (восток - правая сторона), West (запад - левая сторона) и Center (по центру). Например, значение nw указывает на верхний левый угол
+        <p><b>anchor</b>: устанавливает опции растяжения элемента. Может принимать значения n, e, s, w, ne, nw, se, sw, c, которые являются сокращениями от North(север - вверх), South (юг - низ), East (восток - правая сторона), West (запад - левая сторона) и Center (по центру). Например, значение nw указывает на верхний левый угол
 
         </p>
 
@@ -348,8 +348,30 @@
             l_2.grid(row=1, column=0)
 
             root.mainloop()</pre>
-
         <p><img src="../data/labelv.png" alt=""></p>
+        <h3>Задания</h3>
+        <p>Расположите кнопки следующим образом с помощью метода place</p>
+        <p><img src="../data/buttontask.png" alt=""></p>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                    from tkinter import *
+
+                    root = Tk()
+                    root.title("GUI на Python")
+                    root.geometry("150x150")
+
+                    Button(root, text='1').place(relx=0.5, rely=0.6, anchor='n')
+                    Button(root, text='2').place(relx=0.5, rely=0.4, anchor='s')
+                    Button(root, text='3').place(relx=0.5, rely=0.5, anchor='w')
+                    Button(root, text='4').place(relx=0.5, rely=0.5, anchor='e')
+
+                    root.mainloop()
+                </pre>
+            </div>
+        </div>
 
         <footer>
             <div>
