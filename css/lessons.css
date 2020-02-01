@@ -10,7 +10,6 @@ body{
     transition: all ease-in-out 300ms;
 }
 .sidebar{
-    width: 320px;
     height: 100%;
     background-image: url("https://img5.goodfon.com/wallpaper/nbig/2/83/green-eyes-scales-snake.jpg");
     background-size: cover;
@@ -19,6 +18,24 @@ body{
     overflow: hidden;
     float: left;
     color: #fff;
+}
+
+@media (min-width: 1101px) {
+    .sidebar {
+        width: 320px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+    .sidebar {
+        width: 160px;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 60px;
+    }
 }
 .sidebar img{
     width: 140px;
@@ -136,8 +153,13 @@ header{
     padding: 10px 0.5% 0 0.5%;
     background: black;
     float: left;
-    position: fixed;
 
+}
+
+@media (min-width: 900px) {
+    header {
+        position: fixed;
+    }
 }
 
 header #logo {
