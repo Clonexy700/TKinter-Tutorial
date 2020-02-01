@@ -373,6 +373,36 @@
             </div>
         </div>
 
+        <p>С помощью метода grid расположите следующим образом в колонках и столбцах кнопки</p>
+        <p><img src="../data/taskgrid.png" alt=""></p>
+        <div class="popup-box">
+            <a class="popup-title" href="#">Решение</a>
+            <div id="area-p" class="popup-content">
+                <div class="close-this"><a href="#">Закрыть</a></div>
+                <pre>
+                        from tkinter import *
+                        root = Tk()
+                        root.title("TKinter Tutorial")
+                        root.geometry("200x200")
+                        Button(root, text='0 0').grid(row=0, column=0)
+                        Button(root, text='1 0').grid(row=1, column=0)
+                        Button(root, text='2 0').grid(row=2, column=0)
+                        Button(root, text='3 0').grid(row=3, column=0)
+                        Button(root, text='4 0').grid(row=4, column=0)
+                        Button(root, text='5 0').grid(row=5, column=0)
+                        Button(root, text='0 1').grid(row=0, column=1)
+                        Button(root, text='0 2').grid(row=0, column=2)
+                        Button(root, text='0 3').grid(row=0, column=3)
+                        Button(root, text='0 4').grid(row=0, column=4)
+                        Button(root, text='0 5').grid(row=0, column=5)
+                        Button(root, text='2 3', bg='red').grid(row=2, column=3)
+                        Button(root, text='4 1', bg='lightblue').grid(row=4, column=1)
+                        Button(root, text='2 5', bg='orange').grid(row=2, column=5)
+                        root.mainloop()
+                </pre>
+            </div>
+        </div>
+
         <footer>
             <div>
                 <div class="me">Dedov Georgiy</div>
@@ -381,6 +411,7 @@
                     <a href="https://github.com/Clonexy700/MyPythonTkinter"><img src="../data/github.png" width="30" height="30" alt=""/></a>
                     <a href="https://vk.com/clonexy700"><img src="../data/vkontakte.png" width="55" height="30" alt=""/></a>
                     <a href="https://www.python.org/"><img src="../data/pythonlogo.png" width="25" height="25" alt=""/></a>
+                    <div class="download"><a href="https://yadi.sk/d/WyvfngGU-wWjew">Скачать</a></div>
                 </div>
             </div>
         </footer>

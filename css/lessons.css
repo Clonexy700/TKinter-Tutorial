@@ -116,6 +116,10 @@ body{
     left: 0;
 }
 
+.sidebar {
+
+}
+
 .sidebar p {
     font-size: 1.7em;
     line-height: 45px;
@@ -264,4 +268,9 @@ footer .me1 {
     font-family: Trebuchet MS, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 0.95em;
+}
+
+footer .download a {
+    text-align: center;
+    color: #fff;
 }

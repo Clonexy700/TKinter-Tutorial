@@ -413,3 +413,9 @@ footer .links {
     color: #eeeeee;
 }
 
+footer .download a {
+    text-align: center;
+    color: #fff;
+    padding-right: 30px;
+}
+
