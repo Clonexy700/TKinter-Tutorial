@@ -74,28 +74,26 @@ body{
     font-family: 'Roboto Light', serif;
 }
 .content{
-    padding: 20px;
     font-size: 16px;
     color: black;
     font-family: Arimo, Helvetica, sans-serif;
+    padding-left: 4%;
 }
 .content h2{
     font-size: 30px;
     padding-top: 60px;
     text-transform: uppercase;
-    margin-left: 23%;
 }
 
 .content h3{
-    margin-left: 23%;
+    margin-left: 29%;
 }
 
 .content p{
     font-size: 18px;
     text-align: justify;
-    margin-left: 24%;
     margin-right: 6%;
-    padding-right: 3%;
+    padding-right: 6%;
 }
 .content span{
     background: #40b83f;
@@ -124,9 +122,63 @@ body{
     padding: 1em 1.5em;
     display: block;
     word-wrap: break-word;
-    margin-left: 22%;
+    margin-left: 30%;
     margin-right: 30%;
 
+}
+
+@media (min-width: 1101px) {
+    .content h2 {
+        margin-left: 29%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+    .content h2 {
+        margin-left: 49%;
+    }
+}
+
+@media (max-width: 650px) {
+    .content h2 {
+        margin-left: 70%;
+    }
+}
+
+@media (min-width: 1101px) {
+    .content h3 {
+        margin-left: 29%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+    .content h3 {
+        margin-left: 49%;
+    }
+}
+
+@media (max-width: 650px) {
+    .content h3 {
+        margin-left: 70%;
+    }
+}
+
+@media (min-width: 1101px) {
+    .content p {
+        margin-left: 30%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+    .content p {
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 650px) {
+    .content p {
+        margin-left: 70%;
+    }
 }
 
 .show{
@@ -160,6 +212,10 @@ header{
     header {
         position: fixed;
     }
+}
+
+header #logo a {
+    color: #fff;
 }
 
 header #logo {
